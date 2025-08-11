@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -f bootstrap/cache/*.php
 composer install --no-dev --optimize-autoloader
 php artisan config:clear
 php artisan route:clear
