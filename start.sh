@@ -1,22 +1,19 @@
 #!/bin/bash
-set -e
 
-# Jalankan migrasi
+# Jalankan migrate
 php artisan migrate --force
 
-# Pastikan permission & folder Laravel yang dibutuhkan
-mkdir -p storage/framework/views
-mkdir -p storage/framework/cache
-mkdir -p storage/framework/sessions
+# Set permission storage dan cache
 chmod -R 775 storage bootstrap/cache
 
-# Bersihkan cache Laravel
+# Clear dan cache ulang config, route, view
 php artisan config:clear
 php artisan cache:clear
 php artisan route:clear
-
-# Bersihkan compiled views (sekarang foldernya sudah dijamin ada)
 php artisan view:clear
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
 
-# Jalankan Laravel
+# Jalankan Laravel di host dan port Railway
 php artisan serve --host=0.0.0.0 --port=${PORT}
