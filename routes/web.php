@@ -17,7 +17,3 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
 Route::view('/create','create')->middleware('auth');
 
-Route::get('/', function () {
-    Log::info('Laravel berhasil dijalankan!');
-    return 'Laravel is alive!';
-});
