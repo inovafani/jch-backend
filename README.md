@@ -1,4 +1,5 @@
 # Simple Blog Website - Laravel Backend & API
+The app is live in : https://remarkable-art-production-40c5.up.railway.app/
 
 ## Overview
 Project ini adalah **Simple Blog Website** yang dibangun menggunakan **Laravel** untuk Backend (BackOffice) dan API.  
